@@ -46,7 +46,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/RenatoDTH" />
+      <GitHubCorner projectUrl="https://github.com/RenatoDTH/Allura-Quiz" />
     </QuizBackground>
   );
 }
