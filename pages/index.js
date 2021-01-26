@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import Head from 'next/head';
+import { useCallback, useState } from 'react';
+import { useRouter } from 'next/router';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
@@ -26,6 +28,21 @@ const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = useState('');
+
+  const handleSubmit = useCallback(
+    (event) => {
+      event.preventDefault();
+      router.push(`/quiz?name=${name}`);
+    },
+    [router, name],
+  );
+
+  const handleOnChange = useCallback((event) => {
+    setName(event.target.value);
+  }, []);
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
@@ -38,7 +55,16 @@ export default function Home() {
             <h1>The legend of zelda</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>lorem ipsum dolor sit amet...</p>
+            <form onSubmit={handleSubmit}>
+              <input
+                placeholder="Qual o seu nome?"
+                type="text"
+                onChange={handleOnChange}
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
 
