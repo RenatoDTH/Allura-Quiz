@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import Head from 'next/head';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import QuizLogo from '../src/components/QuizLogo';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -26,7 +28,11 @@ const QuizContainer = styled.div`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>AluraQuiz - Modelo Base</title>
+      </Head>
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>The legend of zelda</h1>
