@@ -62,6 +62,7 @@ export default function Home() {
                 placeholder="Qual o seu nome?"
                 type="text"
                 onChange={handleOnChange}
+                value={name}
               />
               <button type="submit" disabled={name.length === 0}>
                 Jogar {name}
