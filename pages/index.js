@@ -8,6 +8,7 @@ import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizLogo from '../src/components/QuizLogo';
+import Input from '../src/components/Input';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -56,7 +57,8 @@ export default function Home() {
           </Widget.Header>
           <Widget.Content>
             <form onSubmit={handleSubmit}>
-              <input
+              <Input
+                name="nomeDoUsuário"
                 placeholder="Qual o seu nome?"
                 type="text"
                 onChange={handleOnChange}
