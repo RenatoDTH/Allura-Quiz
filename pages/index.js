@@ -13,13 +13,6 @@ import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import Link from '../src/components/Link';
 
-// const BackgroundImage = styled.div`
-//   background-image: url(${db.bg});
-//   flex: 1;
-//   background-size: cover;
-//   background-position: center;
-// `;
-
 export default function Home() {
   const router = useRouter();
   const [name, setName] = useState('');
